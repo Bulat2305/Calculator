@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Calculator app</title>
+
+</head>
+<body >
+  <div class="container">
+      <div class="topDiv">
+
+      </div>
+      <div class="resultDiv">
+        <div class="result">399,981</div>
+      </div>
+      <div class="numbersDiv" >
+        <a onclick="myFunction()" class="num0 verticalMid numStyle">0</a>
+        <a class="num1 verticalMid numStyle">1</a>
+        <a class="num2 verticalMid numStyle">2</a>
+        <a class="num3 verticalMid numStyle">3</a>
+        <a class="num4 verticalMid numStyle">4</a>
+        <a class="num5 verticalMid numStyle">5</a>
+        <a class="num7 verticalMid numStyle">7</a>
+        <a class="num6 verticalMid numStyle">6</a>
+        <a class="num8 verticalMid numStyle">8</a>
+        <a class="num9 verticalMid numStyle">9</a>
+        <a class="plus verticalMid operStyle">+</a>
+        <a class="minus verticalMid operStyle">-</a>
+        <a class="multi verticalMid operStyle">x</a>
+        <a class="devide verticalMid operStyle">/</a>
+        <a class="dotty verticalMid operStyle">.</a>
+        <a class="equals verticalMid ">=</a>
+        <a class="reset verticalMid ">RESET</a>
+        <a class="del verticalMid ">DEL</a>
+      </div>
+  </div>
+
+
+   <script src="script.js"></script>
+   <script type="text/javascript">
+     const buttons = document.querySelectorAll('a');
+     buttons.forEach(btn => {
+       btn.addEventListener('click', function (e) {
+         
+        let x = e.clientX - e.target.offsetLeft;
+        let y = e.clientY - e.target.offsetTop;
+
+        let ripples = document.createElement('span')
+        ripples.style.left = x + 'px';
+        ripples.style.top = y + 'px';
+        this.appendChild(ripples);
+
+
+       })
+     })
+   </script>
+</body>
+</html>
